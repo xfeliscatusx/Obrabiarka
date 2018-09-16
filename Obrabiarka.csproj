@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{056B68D7-0017-4110-A307-8826AB850FE5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Obrabiarka</RootNamespace>
+    <AssemblyName>Obrabiarka</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Monika\Desktop\mgr\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>AA77E2EE7D812D58774C0E4512FA520922A4EBCC</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Obrabiarka_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContactDBDataSet.cs">
+      <DependentUpon>ContactDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ContactDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dodaj_narzedzie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodaj_narzedzie.Designer.cs">
+      <DependentUpon>Dodaj_narzedzie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dodaj_operacje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodaj_operacje.Designer.cs">
+      <DependentUpon>Dodaj_operacje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dodaj_zabieg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodaj_zabieg.Designer.cs">
+      <DependentUpon>Dodaj_zabieg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dodaj_zamocowanie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodaj_zamocowanie.Designer.cs">
+      <DependentUpon>Dodaj_zamocowanie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionMethod\CheckedExtensions.cs" />
+    <Compile Include="ExtensionMethod\Extension.cs" />
+    <Compile Include="Frezarki_3_osiowe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Frezarki_4_osiowe_z_napedzanym_narzedziem.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Frezarki_5_osiowe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Frezy_palcowe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Frezy_tarczowe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kryteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kryteria.Designer.cs">
+      <DependentUpon>Kryteria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kryteria2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kryteria2.Designer.cs">
+      <DependentUpon>Kryteria2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kryteria3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kryteria3.Designer.cs">
+      <DependentUpon>Kryteria3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kryteria4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kryteria4.Designer.cs">
+      <DependentUpon>Kryteria4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Narzedzia.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Narzedzia_tokarskie_lewe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Narzedzia_tokarskie_prawe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Serializacja_\TreeViewSerializer.cs" />
+    <Compile Include="Waga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Waga.Designer.cs">
+      <DependentUpon>Waga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zdefiniuj_operacje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zdefiniuj_operacje.Designer.cs">
+      <DependentUpon>Zdefiniuj_operacje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zdefiniuj_zabieg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zdefiniuj_zabieg.Designer.cs">
+      <DependentUpon>Zdefiniuj_zabieg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Obrabiarki.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Operacje.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RodzajeNarzedzi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RodzajeObrabiarek.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Szlifierki_bezklowe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Szlifierki_klowe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tokarki_karuzelowe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tokarki_poziome.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tokarki_XZ.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tokarki_XZC_z_napedzanym_narzedziem.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Wiertarki_CNC.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Wiertarki_reczne.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Wiertla_pelnoweglikowe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Wiertla_skladane.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dodaj_obrabiarke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodaj_obrabiarke.Designer.cs">
+      <DependentUpon>Dodaj_obrabiarke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proces_technologiczny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proces_technologiczny.Designer.cs">
+      <DependentUpon>Proces_technologiczny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wyswietl_narzedzia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wyswietl_narzedzia.Designer.cs">
+      <DependentUpon>Wyswietl_narzedzia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wyswietl_obrabiarki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wyswietl_obrabiarki.Designer.cs">
+      <DependentUpon>Wyswietl_obrabiarki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wytaczaki_tokarskie_hakowe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Wytaczaki_tokarskie_proste.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Wytaczaki_tokarskie_spiczaste.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zabiegi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zajete_narzedzia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zajete_narzedzia.Designer.cs">
+      <DependentUpon>Zajete_narzedzia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zajete_obrabiarki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zajete_obrabiarki.Designer.cs">
+      <DependentUpon>Zajete_obrabiarki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zdefiniuj_narzedzia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zdefiniuj_narzedzia.Designer.cs">
+      <DependentUpon>Zdefiniuj_narzedzia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zdefiniuj_obrabiarki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zdefiniuj_obrabiarki.Designer.cs">
+      <DependentUpon>Zdefiniuj_obrabiarki.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Dodaj_narzedzie.resx">
+      <DependentUpon>Dodaj_narzedzie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dodaj_operacje.resx">
+      <DependentUpon>Dodaj_operacje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dodaj_zabieg.resx">
+      <DependentUpon>Dodaj_zabieg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dodaj_zamocowanie.resx">
+      <DependentUpon>Dodaj_zamocowanie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kryteria.resx">
+      <DependentUpon>Kryteria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kryteria2.resx">
+      <DependentUpon>Kryteria2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kryteria3.resx">
+      <DependentUpon>Kryteria3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kryteria4.resx">
+      <DependentUpon>Kryteria4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Waga.resx">
+      <DependentUpon>Waga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dodaj_obrabiarke.resx">
+      <DependentUpon>Dodaj_obrabiarke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proces_technologiczny.resx">
+      <DependentUpon>Proces_technologiczny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wyswietl_narzedzia.resx">
+      <DependentUpon>Wyswietl_narzedzia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wyswietl_obrabiarki.resx">
+      <DependentUpon>Wyswietl_obrabiarki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zajete_narzedzia.resx">
+      <DependentUpon>Zajete_narzedzia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zajete_obrabiarki.resx">
+      <DependentUpon>Zajete_obrabiarki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zdefiniuj_narzedzia.resx">
+      <DependentUpon>Zdefiniuj_narzedzia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zdefiniuj_obrabiarki.resx">
+      <DependentUpon>Zdefiniuj_obrabiarki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zdefiniuj_operacje.resx">
+      <DependentUpon>Zdefiniuj_operacje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zdefiniuj_zabieg.resx">
+      <DependentUpon>Zdefiniuj_zabieg.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ContactDBDataSet.xsc">
+      <DependentUpon>ContactDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ContactDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContactDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ContactDBDataSet.xss">
+      <DependentUpon>ContactDBDataSet.xsd</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="Obrabiarka_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContactDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContactDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>ContactDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="MetroFramework.txt" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\process.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\technological-treatment.png" />
+    <None Include="Resources\technological-operations.png" />
+    <None Include="Resources\details.png" />
+    <None Include="Resources\move-node-down.png" />
+    <None Include="Resources\move-node-up.png" />
+    <None Include="Resources\tools.png" />
+    <None Include="Resources\machine-tools.png" />
+    <None Include="Resources\delete-selected.png" />
+    <None Include="Resources\add-technological-treatment.png" />
+    <None Include="Resources\add-anchorage.png" />
+    <None Include="Resources\add-tool.png" />
+    <None Include="Resources\add-technological-operations.png" />
+    <None Include="Resources\export.png" />
+    <None Include="Resources\import.png" />
+    <None Include="Resources\add-tool-icon.png" />
+    <None Include="Resources\add-machine-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

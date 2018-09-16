@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ContactDBModelStoreContainer" CdmEntityContainer="ContactDBEntities1">
+    <EntitySetMapping Name="Frezarki_3_osiowe">
+      <EntityTypeMapping TypeName="ContactDBModel.Frezarki_3_osiowe">
+        <MappingFragment StoreEntitySet="Frezarki 3 osiowe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Z" ColumnName="Z" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Frezarki_4_osiowe_z_napedzanym_narzedziem">
+      <EntityTypeMapping TypeName="ContactDBModel.Frezarki_4_osiowe_z_napedzanym_narzedziem">
+        <MappingFragment StoreEntitySet="Frezarki 4 osiowe z napedzanym narzedziem">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Z" ColumnName="Z" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Frezarki_5_osiowe">
+      <EntityTypeMapping TypeName="ContactDBModel.Frezarki_5_osiowe">
+        <MappingFragment StoreEntitySet="Frezarki 5 osiowe">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Z" ColumnName="Z" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Frezy_palcowes">
+      <EntityTypeMapping TypeName="ContactDBModel.Frezy_palcowe">
+        <MappingFragment StoreEntitySet="Frezy palcowe">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Frezy_tarczowes">
+      <EntityTypeMapping TypeName="ContactDBModel.Frezy_tarczowe">
+        <MappingFragment StoreEntitySet="Frezy tarczowe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Narzedzias">
+      <EntityTypeMapping TypeName="ContactDBModel.Narzedzia">
+        <MappingFragment StoreEntitySet="Narzedzia">
+          <ScalarProperty Name="id_narzedzia" ColumnName="id_narzedzia" />
+          <ScalarProperty Name="grupa_narzedzi" ColumnName="grupa_narzedzi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Narzedzia_tokarskie_lewes">
+      <EntityTypeMapping TypeName="ContactDBModel.Narzedzia_tokarskie_lewe">
+        <MappingFragment StoreEntitySet="Narzedzia tokarskie lewe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Narzedzia_tokarskie_prawes">
+      <EntityTypeMapping TypeName="ContactDBModel.Narzedzia_tokarskie_prawe">
+        <MappingFragment StoreEntitySet="Narzedzia tokarskie prawe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Obrabiarkis">
+      <EntityTypeMapping TypeName="ContactDBModel.Obrabiarki">
+        <MappingFragment StoreEntitySet="Obrabiarki">
+          <ScalarProperty Name="id_obrabiarki" ColumnName="id_obrabiarki" />
+          <ScalarProperty Name="grupa_obrabiarek" ColumnName="grupa_obrabiarek" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operacjes">
+      <EntityTypeMapping TypeName="ContactDBModel.Operacje">
+        <MappingFragment StoreEntitySet="Operacje">
+          <ScalarProperty Name="id_operacje" ColumnName="id_operacje" />
+          <ScalarProperty Name="nazwa_operacji" ColumnName="nazwa_operacji" />
+          <ScalarProperty Name="id_rodzajeobrabiarek" ColumnName="id_rodzajeobrabiarek" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RodzajeNarzedzis">
+      <EntityTypeMapping TypeName="ContactDBModel.RodzajeNarzedzi">
+        <MappingFragment StoreEntitySet="RodzajeNarzedzi">
+          <ScalarProperty Name="id_rodzajenarzedzi" ColumnName="id_rodzajenarzedzi" />
+          <ScalarProperty Name="id_narzedzia" ColumnName="id_narzedzia" />
+          <ScalarProperty Name="rodzaj_narzedzia" ColumnName="rodzaj_narzedzia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RodzajeObrabiareks">
+      <EntityTypeMapping TypeName="ContactDBModel.RodzajeObrabiarek">
+        <MappingFragment StoreEntitySet="RodzajeObrabiarek">
+          <ScalarProperty Name="id_rodzajeobrabiarek" ColumnName="id_rodzajeobrabiarek" />
+          <ScalarProperty Name="rodzaj_obrabiarki" ColumnName="rodzaj_obrabiarki" />
+          <ScalarProperty Name="id_obrabiarki" ColumnName="id_obrabiarki" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ContactDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Szlifierki_bezklowes">
+      <EntityTypeMapping TypeName="ContactDBModel.Szlifierki_bezklowe">
+        <MappingFragment StoreEntitySet="Szlifierki bezklowe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Max__średnica_przedmiotu" ColumnName="Max. średnica przedmiotu" />
+          <ScalarProperty Name="Max__długość_przedmiotu" ColumnName="Max. długość przedmiotu" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Szlifierki_klowes">
+      <EntityTypeMapping TypeName="ContactDBModel.Szlifierki_klowe">
+        <MappingFragment StoreEntitySet="Szlifierki klowe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Max__średnica_przedmiotu" ColumnName="Max. średnica przedmiotu" />
+          <ScalarProperty Name="Max__długość_przedmiotu" ColumnName="Max. długość przedmiotu" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokarki_karuzelowes">
+      <EntityTypeMapping TypeName="ContactDBModel.Tokarki_karuzelowe">
+        <MappingFragment StoreEntitySet="Tokarki karuzelowe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Max__średnica_toczenia" ColumnName="Max. średnica toczenia" />
+          <ScalarProperty Name="Max__długość_toczenia" ColumnName="Max. długość toczenia" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokarki_poziomes">
+      <EntityTypeMapping TypeName="ContactDBModel.Tokarki_poziome">
+        <MappingFragment StoreEntitySet="Tokarki poziome">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Max__średnica_toczenia" ColumnName="Max. średnica toczenia" />
+          <ScalarProperty Name="Max__długość_toczenia" ColumnName="Max. długość toczenia" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokarki_XZs">
+      <EntityTypeMapping TypeName="ContactDBModel.Tokarki_XZ">
+        <MappingFragment StoreEntitySet="Tokarki XZ">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Max__średnica_toczenia" ColumnName="Max. średnica toczenia" />
+          <ScalarProperty Name="Max__długość_toczenia" ColumnName="Max. długość toczenia" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokarki_XZC_z_napedzanym_narzedziems">
+      <EntityTypeMapping TypeName="ContactDBModel.Tokarki_XZC_z_napedzanym_narzedziem">
+        <MappingFragment StoreEntitySet="Tokarki XZC z napedzanym narzedziem">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Max__średnica_toczenia" ColumnName="Max. średnica toczenia" />
+          <ScalarProperty Name="Max__długość_toczenia" ColumnName="Max. długość toczenia" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wiertarki_CNCs">
+      <EntityTypeMapping TypeName="ContactDBModel.Wiertarki_CNC">
+        <MappingFragment StoreEntitySet="Wiertarki CNC">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Z" ColumnName="Z" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wiertarki_recznes">
+      <EntityTypeMapping TypeName="ContactDBModel.Wiertarki_reczne">
+        <MappingFragment StoreEntitySet="Wiertarki reczne">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Z" ColumnName="Z" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wiertla_pelnoweglikowes">
+      <EntityTypeMapping TypeName="ContactDBModel.Wiertla_pelnoweglikowe">
+        <MappingFragment StoreEntitySet="Wiertla pelnoweglikowe">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wiertla_skladanes">
+      <EntityTypeMapping TypeName="ContactDBModel.Wiertla_skladane">
+        <MappingFragment StoreEntitySet="Wiertla skladane">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wytaczaki_tokarskie_hakowes">
+      <EntityTypeMapping TypeName="ContactDBModel.Wytaczaki_tokarskie_hakowe">
+        <MappingFragment StoreEntitySet="Wytaczaki tokarskie hakowe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wytaczaki_tokarskie_prostes">
+      <EntityTypeMapping TypeName="ContactDBModel.Wytaczaki_tokarskie_proste">
+        <MappingFragment StoreEntitySet="Wytaczaki tokarskie proste">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wytaczaki_tokarskie_spiczastes">
+      <EntityTypeMapping TypeName="ContactDBModel.Wytaczaki_tokarskie_spiczaste">
+        <MappingFragment StoreEntitySet="Wytaczaki tokarskie spiczaste">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zabiegis">
+      <EntityTypeMapping TypeName="ContactDBModel.Zabiegi">
+        <MappingFragment StoreEntitySet="Zabiegi">
+          <ScalarProperty Name="id_zabiegu" ColumnName="id_zabiegu" />
+          <ScalarProperty Name="nazwa_zabiegu" ColumnName="nazwa_zabiegu" />
+          <ScalarProperty Name="id_rodzajenarzedzi" ColumnName="id_rodzajenarzedzi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

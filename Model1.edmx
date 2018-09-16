@@ -1,0 +1,1019 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ContactDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Frezarki 3 osiowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="X" Type="nvarchar" MaxLength="50" />
+          <Property Name="Y" Type="nvarchar" MaxLength="50" />
+          <Property Name="Z" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Frezarki 4 osiowe z napedzanym narzedziem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="X" Type="int" />
+          <Property Name="Y" Type="int" />
+          <Property Name="Z" Type="int" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Frezarki 5 osiowe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar(max)" />
+          <Property Name="X" Type="nvarchar" MaxLength="50" />
+          <Property Name="Y" Type="nvarchar" MaxLength="50" />
+          <Property Name="Z" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Frezy palcowe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa narzędzia" Type="nvarchar" MaxLength="50" />
+          <Property Name="D" Type="float" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Frezy tarczowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa narzędzia" Type="nvarchar" MaxLength="50" />
+          <Property Name="D" Type="float" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Narzedzia">
+          <Key>
+            <PropertyRef Name="id_narzedzia" />
+          </Key>
+          <Property Name="id_narzedzia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="grupa_narzedzi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Narzedzia tokarskie lewe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa narzędzia" Type="varchar(max)" />
+          <Property Name="D" Type="float" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Narzedzia tokarskie prawe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa narzędzia" Type="nvarchar(max)" />
+          <Property Name="D" Type="float" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Obrabiarki">
+          <Key>
+            <PropertyRef Name="id_obrabiarki" />
+          </Key>
+          <Property Name="id_obrabiarki" Type="int" Nullable="false" />
+          <Property Name="grupa_obrabiarek" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Operacje">
+          <Key>
+            <PropertyRef Name="id_operacje" />
+          </Key>
+          <Property Name="id_operacje" Type="int" Nullable="false" />
+          <Property Name="nazwa_operacji" Type="nvarchar(max)" />
+          <Property Name="id_rodzajeobrabiarek" Type="int" />
+        </EntityType>
+        <EntityType Name="RodzajeNarzedzi">
+          <Key>
+            <PropertyRef Name="id_rodzajenarzedzi" />
+          </Key>
+          <Property Name="id_rodzajenarzedzi" Type="int" Nullable="false" />
+          <Property Name="id_narzedzia" Type="int" />
+          <Property Name="rodzaj_narzedzia" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RodzajeObrabiarek">
+          <Key>
+            <PropertyRef Name="id_rodzajeobrabiarek" />
+          </Key>
+          <Property Name="id_rodzajeobrabiarek" Type="int" Nullable="false" />
+          <Property Name="rodzaj_obrabiarki" Type="nvarchar" MaxLength="50" />
+          <Property Name="id_obrabiarki" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Szlifierki bezklowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Max. średnica przedmiotu" Type="int" />
+          <Property Name="Max. długość przedmiotu" Type="int" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Szlifierki klowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Max. średnica przedmiotu" Type="int" />
+          <Property Name="Max. długość przedmiotu" Type="int" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tokarki karuzelowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="varchar" MaxLength="50" />
+          <Property Name="Max. średnica toczenia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Max. długość toczenia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tokarki poziome">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Max. średnica toczenia" Type="int" />
+          <Property Name="Max. długość toczenia" Type="int" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tokarki XZ">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Max. średnica toczenia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Max. długość toczenia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tokarki XZC z napedzanym narzedziem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Max. średnica toczenia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Max. długość toczenia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wiertarki CNC">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="X" Type="int" />
+          <Property Name="Y" Type="int" />
+          <Property Name="Z" Type="int" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wiertarki reczne">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="X" Type="nvarchar" MaxLength="50" />
+          <Property Name="Y" Type="nvarchar" MaxLength="50" />
+          <Property Name="Z" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wiertla pelnoweglikowe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa narzędzia" Type="nvarchar(max)" />
+          <Property Name="D" Type="float" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wiertla skladane">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa narzędzia" Type="nvarchar" MaxLength="50" />
+          <Property Name="D" Type="int" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wytaczaki tokarskie hakowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa narzędzia" Type="nvarchar(max)" />
+          <Property Name="D" Type="float" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wytaczaki tokarskie proste">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa narzędzia" Type="nvarchar(max)" />
+          <Property Name="D" Type="float" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wytaczaki tokarskie spiczaste">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa narzędzia" Type="nvarchar(max)" />
+          <Property Name="D" Type="float" />
+          <Property Name="Rezerwuj" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zabiegi">
+          <Key>
+            <PropertyRef Name="id_zabiegu" />
+          </Key>
+          <Property Name="id_zabiegu" Type="int" Nullable="false" />
+          <Property Name="nazwa_zabiegu" Type="nvarchar(max)" />
+          <Property Name="id_rodzajenarzedzi" Type="int" />
+        </EntityType>
+        <Association Name="FK_Operacje_RodzajeObrabiarek">
+          <End Role="RodzajeObrabiarek" Type="Self.RodzajeObrabiarek" Multiplicity="0..1" />
+          <End Role="Operacje" Type="Self.Operacje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajeObrabiarek">
+              <PropertyRef Name="id_rodzajeobrabiarek" />
+            </Principal>
+            <Dependent Role="Operacje">
+              <PropertyRef Name="id_rodzajeobrabiarek" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RodzajeNarzedzi_Narzedzia">
+          <End Role="Narzedzia" Type="Self.Narzedzia" Multiplicity="0..1" />
+          <End Role="RodzajeNarzedzi" Type="Self.RodzajeNarzedzi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narzedzia">
+              <PropertyRef Name="id_narzedzia" />
+            </Principal>
+            <Dependent Role="RodzajeNarzedzi">
+              <PropertyRef Name="id_narzedzia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RodzajeObrabiarek_Obrabiarki">
+          <End Role="Obrabiarki" Type="Self.Obrabiarki" Multiplicity="0..1" />
+          <End Role="RodzajeObrabiarek" Type="Self.RodzajeObrabiarek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Obrabiarki">
+              <PropertyRef Name="id_obrabiarki" />
+            </Principal>
+            <Dependent Role="RodzajeObrabiarek">
+              <PropertyRef Name="id_obrabiarki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zabiegi_RodzajeNarzedzi">
+          <End Role="RodzajeNarzedzi" Type="Self.RodzajeNarzedzi" Multiplicity="0..1" />
+          <End Role="Zabiegi" Type="Self.Zabiegi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajeNarzedzi">
+              <PropertyRef Name="id_rodzajenarzedzi" />
+            </Principal>
+            <Dependent Role="Zabiegi">
+              <PropertyRef Name="id_rodzajenarzedzi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ContactDBModelStoreContainer">
+          <EntitySet Name="Frezarki 3 osiowe" EntityType="Self.Frezarki 3 osiowe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Frezarki 4 osiowe z napedzanym narzedziem" EntityType="Self.Frezarki 4 osiowe z napedzanym narzedziem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Frezarki 5 osiowe" EntityType="Self.Frezarki 5 osiowe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Frezy palcowe" EntityType="Self.Frezy palcowe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Frezy tarczowe" EntityType="Self.Frezy tarczowe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Narzedzia" EntityType="Self.Narzedzia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Narzedzia tokarskie lewe" EntityType="Self.Narzedzia tokarskie lewe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Narzedzia tokarskie prawe" EntityType="Self.Narzedzia tokarskie prawe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Obrabiarki" EntityType="Self.Obrabiarki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Operacje" EntityType="Self.Operacje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RodzajeNarzedzi" EntityType="Self.RodzajeNarzedzi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RodzajeObrabiarek" EntityType="Self.RodzajeObrabiarek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Szlifierki bezklowe" EntityType="Self.Szlifierki bezklowe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Szlifierki klowe" EntityType="Self.Szlifierki klowe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tokarki karuzelowe" EntityType="Self.Tokarki karuzelowe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tokarki poziome" EntityType="Self.Tokarki poziome" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tokarki XZ" EntityType="Self.Tokarki XZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tokarki XZC z napedzanym narzedziem" EntityType="Self.Tokarki XZC z napedzanym narzedziem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wiertarki CNC" EntityType="Self.Wiertarki CNC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wiertarki reczne" EntityType="Self.Wiertarki reczne" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wiertla pelnoweglikowe" EntityType="Self.Wiertla pelnoweglikowe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wiertla skladane" EntityType="Self.Wiertla skladane" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wytaczaki tokarskie hakowe" EntityType="Self.Wytaczaki tokarskie hakowe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wytaczaki tokarskie proste" EntityType="Self.Wytaczaki tokarskie proste" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wytaczaki tokarskie spiczaste" EntityType="Self.Wytaczaki tokarskie spiczaste" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zabiegi" EntityType="Self.Zabiegi" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Operacje_RodzajeObrabiarek" Association="Self.FK_Operacje_RodzajeObrabiarek">
+            <End Role="RodzajeObrabiarek" EntitySet="RodzajeObrabiarek" />
+            <End Role="Operacje" EntitySet="Operacje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RodzajeNarzedzi_Narzedzia" Association="Self.FK_RodzajeNarzedzi_Narzedzia">
+            <End Role="Narzedzia" EntitySet="Narzedzia" />
+            <End Role="RodzajeNarzedzi" EntitySet="RodzajeNarzedzi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RodzajeObrabiarek_Obrabiarki" Association="Self.FK_RodzajeObrabiarek_Obrabiarki">
+            <End Role="Obrabiarki" EntitySet="Obrabiarki" />
+            <End Role="RodzajeObrabiarek" EntitySet="RodzajeObrabiarek" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zabiegi_RodzajeNarzedzi" Association="Self.FK_Zabiegi_RodzajeNarzedzi">
+            <End Role="RodzajeNarzedzi" EntitySet="RodzajeNarzedzi" />
+            <End Role="Zabiegi" EntitySet="Zabiegi" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ContactDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Frezarki_3_osiowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="X" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Y" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Z" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Frezarki_4_osiowe_z_napedzanym_narzedziem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="X" Type="Int32" />
+          <Property Name="Y" Type="Int32" />
+          <Property Name="Z" Type="Int32" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Frezarki_5_osiowe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="X" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Y" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Z" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Frezy_palcowe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_narzędzia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="Double" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Frezy_tarczowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_narzędzia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="Double" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Narzedzia">
+          <Key>
+            <PropertyRef Name="id_narzedzia" />
+          </Key>
+          <Property Name="id_narzedzia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="grupa_narzedzi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RodzajeNarzedzis" Relationship="Self.FK_RodzajeNarzedzi_Narzedzia" FromRole="Narzedzia" ToRole="RodzajeNarzedzi" />
+        </EntityType>
+        <EntityType Name="Narzedzia_tokarskie_lewe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_narzędzia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="D" Type="Double" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Narzedzia_tokarskie_prawe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_narzędzia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="Double" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Obrabiarki">
+          <Key>
+            <PropertyRef Name="id_obrabiarki" />
+          </Key>
+          <Property Name="id_obrabiarki" Type="Int32" Nullable="false" />
+          <Property Name="grupa_obrabiarek" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="RodzajeObrabiareks" Relationship="Self.FK_RodzajeObrabiarek_Obrabiarki" FromRole="Obrabiarki" ToRole="RodzajeObrabiarek" />
+        </EntityType>
+        <EntityType Name="Operacje">
+          <Key>
+            <PropertyRef Name="id_operacje" />
+          </Key>
+          <Property Name="id_operacje" Type="Int32" Nullable="false" />
+          <Property Name="nazwa_operacji" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_rodzajeobrabiarek" Type="Int32" />
+          <NavigationProperty Name="RodzajeObrabiarek" Relationship="Self.FK_Operacje_RodzajeObrabiarek" FromRole="Operacje" ToRole="RodzajeObrabiarek" />
+        </EntityType>
+        <EntityType Name="RodzajeNarzedzi">
+          <Key>
+            <PropertyRef Name="id_rodzajenarzedzi" />
+          </Key>
+          <Property Name="id_rodzajenarzedzi" Type="Int32" Nullable="false" />
+          <Property Name="id_narzedzia" Type="Int32" />
+          <Property Name="rodzaj_narzedzia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Narzedzia" Relationship="Self.FK_RodzajeNarzedzi_Narzedzia" FromRole="RodzajeNarzedzi" ToRole="Narzedzia" />
+          <NavigationProperty Name="Zabiegis" Relationship="Self.FK_Zabiegi_RodzajeNarzedzi" FromRole="RodzajeNarzedzi" ToRole="Zabiegi" />
+        </EntityType>
+        <EntityType Name="RodzajeObrabiarek">
+          <Key>
+            <PropertyRef Name="id_rodzajeobrabiarek" />
+          </Key>
+          <Property Name="id_rodzajeobrabiarek" Type="Int32" Nullable="false" />
+          <Property Name="rodzaj_obrabiarki" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="id_obrabiarki" Type="Int32" />
+          <NavigationProperty Name="Obrabiarki" Relationship="Self.FK_RodzajeObrabiarek_Obrabiarki" FromRole="RodzajeObrabiarek" ToRole="Obrabiarki" />
+          <NavigationProperty Name="Operacjes" Relationship="Self.FK_Operacje_RodzajeObrabiarek" FromRole="RodzajeObrabiarek" ToRole="Operacje" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Szlifierki_bezklowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Max__średnica_przedmiotu" Type="Int32" />
+          <Property Name="Max__długość_przedmiotu" Type="Int32" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Szlifierki_klowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Max__średnica_przedmiotu" Type="Int32" />
+          <Property Name="Max__długość_przedmiotu" Type="Int32" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tokarki_karuzelowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Max__średnica_toczenia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Max__długość_toczenia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tokarki_poziome">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Max__średnica_toczenia" Type="Int32" />
+          <Property Name="Max__długość_toczenia" Type="Int32" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tokarki_XZ">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Max__średnica_toczenia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Max__długość_toczenia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tokarki_XZC_z_napedzanym_narzedziem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Max__średnica_toczenia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Max__długość_toczenia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wiertarki_CNC">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="X" Type="Int32" />
+          <Property Name="Y" Type="Int32" />
+          <Property Name="Z" Type="Int32" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wiertarki_reczne">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="X" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Y" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Z" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wiertla_pelnoweglikowe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_narzędzia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="Double" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wiertla_skladane">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_narzędzia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="Int32" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wytaczaki_tokarskie_hakowe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_narzędzia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="Double" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wytaczaki_tokarskie_proste">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_narzędzia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="Double" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wytaczaki_tokarskie_spiczaste">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_narzędzia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="Double" />
+          <Property Name="Rezerwuj" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zabiegi">
+          <Key>
+            <PropertyRef Name="id_zabiegu" />
+          </Key>
+          <Property Name="id_zabiegu" Type="Int32" Nullable="false" />
+          <Property Name="nazwa_zabiegu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_rodzajenarzedzi" Type="Int32" />
+          <NavigationProperty Name="RodzajeNarzedzi" Relationship="Self.FK_Zabiegi_RodzajeNarzedzi" FromRole="Zabiegi" ToRole="RodzajeNarzedzi" />
+        </EntityType>
+        <Association Name="FK_RodzajeNarzedzi_Narzedzia">
+          <End Role="Narzedzia" Type="Self.Narzedzia" Multiplicity="0..1" />
+          <End Role="RodzajeNarzedzi" Type="Self.RodzajeNarzedzi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narzedzia">
+              <PropertyRef Name="id_narzedzia" />
+            </Principal>
+            <Dependent Role="RodzajeNarzedzi">
+              <PropertyRef Name="id_narzedzia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RodzajeObrabiarek_Obrabiarki">
+          <End Role="Obrabiarki" Type="Self.Obrabiarki" Multiplicity="0..1" />
+          <End Role="RodzajeObrabiarek" Type="Self.RodzajeObrabiarek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Obrabiarki">
+              <PropertyRef Name="id_obrabiarki" />
+            </Principal>
+            <Dependent Role="RodzajeObrabiarek">
+              <PropertyRef Name="id_obrabiarki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operacje_RodzajeObrabiarek">
+          <End Role="RodzajeObrabiarek" Type="Self.RodzajeObrabiarek" Multiplicity="0..1" />
+          <End Role="Operacje" Type="Self.Operacje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajeObrabiarek">
+              <PropertyRef Name="id_rodzajeobrabiarek" />
+            </Principal>
+            <Dependent Role="Operacje">
+              <PropertyRef Name="id_rodzajeobrabiarek" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zabiegi_RodzajeNarzedzi">
+          <End Role="RodzajeNarzedzi" Type="Self.RodzajeNarzedzi" Multiplicity="0..1" />
+          <End Role="Zabiegi" Type="Self.Zabiegi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajeNarzedzi">
+              <PropertyRef Name="id_rodzajenarzedzi" />
+            </Principal>
+            <Dependent Role="Zabiegi">
+              <PropertyRef Name="id_rodzajenarzedzi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ContactDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Frezarki_3_osiowe" EntityType="Self.Frezarki_3_osiowe" />
+          <EntitySet Name="Frezarki_4_osiowe_z_napedzanym_narzedziem" EntityType="Self.Frezarki_4_osiowe_z_napedzanym_narzedziem" />
+          <EntitySet Name="Frezarki_5_osiowe" EntityType="Self.Frezarki_5_osiowe" />
+          <EntitySet Name="Frezy_palcowes" EntityType="Self.Frezy_palcowe" />
+          <EntitySet Name="Frezy_tarczowes" EntityType="Self.Frezy_tarczowe" />
+          <EntitySet Name="Narzedzias" EntityType="Self.Narzedzia" />
+          <EntitySet Name="Narzedzia_tokarskie_lewes" EntityType="Self.Narzedzia_tokarskie_lewe" />
+          <EntitySet Name="Narzedzia_tokarskie_prawes" EntityType="Self.Narzedzia_tokarskie_prawe" />
+          <EntitySet Name="Obrabiarkis" EntityType="Self.Obrabiarki" />
+          <EntitySet Name="Operacjes" EntityType="Self.Operacje" />
+          <EntitySet Name="RodzajeNarzedzis" EntityType="Self.RodzajeNarzedzi" />
+          <EntitySet Name="RodzajeObrabiareks" EntityType="Self.RodzajeObrabiarek" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Szlifierki_bezklowes" EntityType="Self.Szlifierki_bezklowe" />
+          <EntitySet Name="Szlifierki_klowes" EntityType="Self.Szlifierki_klowe" />
+          <EntitySet Name="Tokarki_karuzelowes" EntityType="Self.Tokarki_karuzelowe" />
+          <EntitySet Name="Tokarki_poziomes" EntityType="Self.Tokarki_poziome" />
+          <EntitySet Name="Tokarki_XZs" EntityType="Self.Tokarki_XZ" />
+          <EntitySet Name="Tokarki_XZC_z_napedzanym_narzedziems" EntityType="Self.Tokarki_XZC_z_napedzanym_narzedziem" />
+          <EntitySet Name="Wiertarki_CNCs" EntityType="Self.Wiertarki_CNC" />
+          <EntitySet Name="Wiertarki_recznes" EntityType="Self.Wiertarki_reczne" />
+          <EntitySet Name="Wiertla_pelnoweglikowes" EntityType="Self.Wiertla_pelnoweglikowe" />
+          <EntitySet Name="Wiertla_skladanes" EntityType="Self.Wiertla_skladane" />
+          <EntitySet Name="Wytaczaki_tokarskie_hakowes" EntityType="Self.Wytaczaki_tokarskie_hakowe" />
+          <EntitySet Name="Wytaczaki_tokarskie_prostes" EntityType="Self.Wytaczaki_tokarskie_proste" />
+          <EntitySet Name="Wytaczaki_tokarskie_spiczastes" EntityType="Self.Wytaczaki_tokarskie_spiczaste" />
+          <EntitySet Name="Zabiegis" EntityType="Self.Zabiegi" />
+          <AssociationSet Name="FK_RodzajeNarzedzi_Narzedzia" Association="Self.FK_RodzajeNarzedzi_Narzedzia">
+            <End Role="Narzedzia" EntitySet="Narzedzias" />
+            <End Role="RodzajeNarzedzi" EntitySet="RodzajeNarzedzis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RodzajeObrabiarek_Obrabiarki" Association="Self.FK_RodzajeObrabiarek_Obrabiarki">
+            <End Role="Obrabiarki" EntitySet="Obrabiarkis" />
+            <End Role="RodzajeObrabiarek" EntitySet="RodzajeObrabiareks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operacje_RodzajeObrabiarek" Association="Self.FK_Operacje_RodzajeObrabiarek">
+            <End Role="RodzajeObrabiarek" EntitySet="RodzajeObrabiareks" />
+            <End Role="Operacje" EntitySet="Operacjes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zabiegi_RodzajeNarzedzi" Association="Self.FK_Zabiegi_RodzajeNarzedzi">
+            <End Role="RodzajeNarzedzi" EntitySet="RodzajeNarzedzis" />
+            <End Role="Zabiegi" EntitySet="Zabiegis" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ContactDBModelStoreContainer" CdmEntityContainer="ContactDBEntities1">
+          <EntitySetMapping Name="Frezarki_3_osiowe">
+            <EntityTypeMapping TypeName="ContactDBModel.Frezarki_3_osiowe">
+              <MappingFragment StoreEntitySet="Frezarki 3 osiowe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="Z" ColumnName="Z" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Frezarki_4_osiowe_z_napedzanym_narzedziem">
+            <EntityTypeMapping TypeName="ContactDBModel.Frezarki_4_osiowe_z_napedzanym_narzedziem">
+              <MappingFragment StoreEntitySet="Frezarki 4 osiowe z napedzanym narzedziem">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="Z" ColumnName="Z" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Frezarki_5_osiowe">
+            <EntityTypeMapping TypeName="ContactDBModel.Frezarki_5_osiowe">
+              <MappingFragment StoreEntitySet="Frezarki 5 osiowe">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="Z" ColumnName="Z" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Frezy_palcowes">
+            <EntityTypeMapping TypeName="ContactDBModel.Frezy_palcowe">
+              <MappingFragment StoreEntitySet="Frezy palcowe">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Frezy_tarczowes">
+            <EntityTypeMapping TypeName="ContactDBModel.Frezy_tarczowe">
+              <MappingFragment StoreEntitySet="Frezy tarczowe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Narzedzias">
+            <EntityTypeMapping TypeName="ContactDBModel.Narzedzia">
+              <MappingFragment StoreEntitySet="Narzedzia">
+                <ScalarProperty Name="id_narzedzia" ColumnName="id_narzedzia" />
+                <ScalarProperty Name="grupa_narzedzi" ColumnName="grupa_narzedzi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Narzedzia_tokarskie_lewes">
+            <EntityTypeMapping TypeName="ContactDBModel.Narzedzia_tokarskie_lewe">
+              <MappingFragment StoreEntitySet="Narzedzia tokarskie lewe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Narzedzia_tokarskie_prawes">
+            <EntityTypeMapping TypeName="ContactDBModel.Narzedzia_tokarskie_prawe">
+              <MappingFragment StoreEntitySet="Narzedzia tokarskie prawe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Obrabiarkis">
+            <EntityTypeMapping TypeName="ContactDBModel.Obrabiarki">
+              <MappingFragment StoreEntitySet="Obrabiarki">
+                <ScalarProperty Name="id_obrabiarki" ColumnName="id_obrabiarki" />
+                <ScalarProperty Name="grupa_obrabiarek" ColumnName="grupa_obrabiarek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operacjes">
+            <EntityTypeMapping TypeName="ContactDBModel.Operacje">
+              <MappingFragment StoreEntitySet="Operacje">
+                <ScalarProperty Name="id_operacje" ColumnName="id_operacje" />
+                <ScalarProperty Name="nazwa_operacji" ColumnName="nazwa_operacji" />
+                <ScalarProperty Name="id_rodzajeobrabiarek" ColumnName="id_rodzajeobrabiarek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RodzajeNarzedzis">
+            <EntityTypeMapping TypeName="ContactDBModel.RodzajeNarzedzi">
+              <MappingFragment StoreEntitySet="RodzajeNarzedzi">
+                <ScalarProperty Name="id_rodzajenarzedzi" ColumnName="id_rodzajenarzedzi" />
+                <ScalarProperty Name="id_narzedzia" ColumnName="id_narzedzia" />
+                <ScalarProperty Name="rodzaj_narzedzia" ColumnName="rodzaj_narzedzia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RodzajeObrabiareks">
+            <EntityTypeMapping TypeName="ContactDBModel.RodzajeObrabiarek">
+              <MappingFragment StoreEntitySet="RodzajeObrabiarek">
+                <ScalarProperty Name="id_rodzajeobrabiarek" ColumnName="id_rodzajeobrabiarek" />
+                <ScalarProperty Name="rodzaj_obrabiarki" ColumnName="rodzaj_obrabiarki" />
+                <ScalarProperty Name="id_obrabiarki" ColumnName="id_obrabiarki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ContactDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Szlifierki_bezklowes">
+            <EntityTypeMapping TypeName="ContactDBModel.Szlifierki_bezklowe">
+              <MappingFragment StoreEntitySet="Szlifierki bezklowe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Max__średnica_przedmiotu" ColumnName="Max. średnica przedmiotu" />
+                <ScalarProperty Name="Max__długość_przedmiotu" ColumnName="Max. długość przedmiotu" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Szlifierki_klowes">
+            <EntityTypeMapping TypeName="ContactDBModel.Szlifierki_klowe">
+              <MappingFragment StoreEntitySet="Szlifierki klowe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Max__średnica_przedmiotu" ColumnName="Max. średnica przedmiotu" />
+                <ScalarProperty Name="Max__długość_przedmiotu" ColumnName="Max. długość przedmiotu" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tokarki_karuzelowes">
+            <EntityTypeMapping TypeName="ContactDBModel.Tokarki_karuzelowe">
+              <MappingFragment StoreEntitySet="Tokarki karuzelowe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Max__średnica_toczenia" ColumnName="Max. średnica toczenia" />
+                <ScalarProperty Name="Max__długość_toczenia" ColumnName="Max. długość toczenia" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tokarki_poziomes">
+            <EntityTypeMapping TypeName="ContactDBModel.Tokarki_poziome">
+              <MappingFragment StoreEntitySet="Tokarki poziome">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Max__średnica_toczenia" ColumnName="Max. średnica toczenia" />
+                <ScalarProperty Name="Max__długość_toczenia" ColumnName="Max. długość toczenia" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tokarki_XZs">
+            <EntityTypeMapping TypeName="ContactDBModel.Tokarki_XZ">
+              <MappingFragment StoreEntitySet="Tokarki XZ">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Max__średnica_toczenia" ColumnName="Max. średnica toczenia" />
+                <ScalarProperty Name="Max__długość_toczenia" ColumnName="Max. długość toczenia" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tokarki_XZC_z_napedzanym_narzedziems">
+            <EntityTypeMapping TypeName="ContactDBModel.Tokarki_XZC_z_napedzanym_narzedziem">
+              <MappingFragment StoreEntitySet="Tokarki XZC z napedzanym narzedziem">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Max__średnica_toczenia" ColumnName="Max. średnica toczenia" />
+                <ScalarProperty Name="Max__długość_toczenia" ColumnName="Max. długość toczenia" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wiertarki_CNCs">
+            <EntityTypeMapping TypeName="ContactDBModel.Wiertarki_CNC">
+              <MappingFragment StoreEntitySet="Wiertarki CNC">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="Z" ColumnName="Z" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wiertarki_recznes">
+            <EntityTypeMapping TypeName="ContactDBModel.Wiertarki_reczne">
+              <MappingFragment StoreEntitySet="Wiertarki reczne">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="Z" ColumnName="Z" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wiertla_pelnoweglikowes">
+            <EntityTypeMapping TypeName="ContactDBModel.Wiertla_pelnoweglikowe">
+              <MappingFragment StoreEntitySet="Wiertla pelnoweglikowe">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wiertla_skladanes">
+            <EntityTypeMapping TypeName="ContactDBModel.Wiertla_skladane">
+              <MappingFragment StoreEntitySet="Wiertla skladane">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wytaczaki_tokarskie_hakowes">
+            <EntityTypeMapping TypeName="ContactDBModel.Wytaczaki_tokarskie_hakowe">
+              <MappingFragment StoreEntitySet="Wytaczaki tokarskie hakowe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wytaczaki_tokarskie_prostes">
+            <EntityTypeMapping TypeName="ContactDBModel.Wytaczaki_tokarskie_proste">
+              <MappingFragment StoreEntitySet="Wytaczaki tokarskie proste">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wytaczaki_tokarskie_spiczastes">
+            <EntityTypeMapping TypeName="ContactDBModel.Wytaczaki_tokarskie_spiczaste">
+              <MappingFragment StoreEntitySet="Wytaczaki tokarskie spiczaste">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="Rezerwuj" ColumnName="Rezerwuj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zabiegis">
+            <EntityTypeMapping TypeName="ContactDBModel.Zabiegi">
+              <MappingFragment StoreEntitySet="Zabiegi">
+                <ScalarProperty Name="id_zabiegu" ColumnName="id_zabiegu" />
+                <ScalarProperty Name="nazwa_zabiegu" ColumnName="nazwa_zabiegu" />
+                <ScalarProperty Name="id_rodzajenarzedzi" ColumnName="id_rodzajenarzedzi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

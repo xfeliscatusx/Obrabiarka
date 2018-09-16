@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9b3408cb36404ee793fab5b050dc5920" Name="Diagram1">
+        <EntityTypeShape EntityType="ContactDBModel.Frezarki_3_osiowe" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Frezarki_4_osiowe_z_napedzanym_narzedziem" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Frezarki_5_osiowe" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Frezy_palcowe" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Frezy_tarczowe" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Narzedzia" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Narzedzia_tokarskie_lewe" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Narzedzia_tokarskie_prawe" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Obrabiarki" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Operacje" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.RodzajeNarzedzi" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.RodzajeObrabiarek" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.sysdiagram" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Szlifierki_bezklowe" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Szlifierki_klowe" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Tokarki_karuzelowe" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Tokarki_poziome" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Tokarki_XZ" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Tokarki_XZC_z_napedzanym_narzedziem" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Wiertarki_CNC" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Wiertarki_reczne" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Wiertla_pelnoweglikowe" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Wiertla_skladane" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Wytaczaki_tokarskie_hakowe" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Wytaczaki_tokarskie_proste" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Wytaczaki_tokarskie_spiczaste" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactDBModel.Zabiegi" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="ContactDBModel.FK_RodzajeNarzedzi_Narzedzia" ManuallyRouted="false" />
+        <AssociationConnector Association="ContactDBModel.FK_RodzajeObrabiarek_Obrabiarki" ManuallyRouted="false" />
+        <AssociationConnector Association="ContactDBModel.FK_Operacje_RodzajeObrabiarek" ManuallyRouted="false" />
+        <AssociationConnector Association="ContactDBModel.FK_Zabiegi_RodzajeNarzedzi" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

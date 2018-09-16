@@ -1,0 +1,5 @@
+C:\Users\Monika\Obrabiarka\Obrabiarka\obj\Release\Obrabiarka.DodajObrabiarke.resources
+C:\Users\Monika\Obrabiarka\Obrabiarka\obj\Release\Obrabiarka.Form1.resources
+C:\Users\Monika\Obrabiarka\Obrabiarka\obj\Release\Obrabiarka.Properties.Resources.resources
+C:\Users\Monika\Obrabiarka\Obrabiarka\obj\Release\Obrabiarka.csproj.GenerateResource.Cache
+C:\Users\Monika\Obrabiarka\Obrabiarka\obj\Release\Obrabiarka.csproj.CoreCompileInputs.cache
